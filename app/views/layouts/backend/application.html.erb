@@ -6,11 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag "backend", media: "all" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="backend-layout">
+      <header class="backend-layout__header">
+        <%= render "layouts/backend/header" %>
+      </header>
+
+      <aside class="backend-layout__aside">
+        <%= render "layouts/backend/side_menu" %>
+      </aside>
+
+      <div class="backend-layout__body">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_pack_tag "backend" %>
   </body>
 </html>

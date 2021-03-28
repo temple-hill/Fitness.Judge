@@ -1,5 +1,6 @@
 import * as React from 'react';
 import reactRender from '../../lib/reactRender';
+import '../../../stylesheets/backend/application.scss';
 
 import Test from '../../components/backend/Test';
 
