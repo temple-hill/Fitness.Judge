@@ -1,11 +1,17 @@
 <ul>
   <li>
-    <%= link_to "テスト１", backend_root_path %>
+    <%= link_to backend_root_path do %>
+      <i class="fab fa-twitter"></i>テスト１
+    <% end %>
   </li>
   <li>
-    <%= link_to "テスト２", backend_root_path %>
+    <%= link_to backend_root_path do %>
+      <i class="fab fa-twitter"></i>テスト２
+    <% end %>
   </li>
   <li>
-    <%= link_to "テスト３", backend_root_path %>
+    <%= link_to backend_root_path do %>
+      <i class="fab fa-twitter"></i>テスト３
+    <% end %>
   </li>
 </ul>

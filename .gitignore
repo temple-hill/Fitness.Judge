@@ -32,5 +32,6 @@
 /config/master.key
 
 /node_modules
+/yarn-error.log
 
 /vendor/bundle

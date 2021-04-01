@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <%= stylesheet_pack_tag "backend", media: "all" %>
   </head>
 
@@ -20,7 +21,9 @@
       </aside>
 
       <div class="backend-layout__body">
-        <%= yield %>
+        <div class="container">
+          <%= yield %>
+        </div>
       </div>
     </div>
     <%= javascript_pack_tag "backend" %>

@@ -8,34 +8,36 @@
     top: 0;
     left: 0;
     position: fixed;
-    background-color: $color-white;
-    z-index: 100;
-    border-bottom: 1px solid $color-text-sub;
+    background-color: #EEEEEE;
+    z-index: 5;
+    border-bottom: 1px solid #d7bb00;
     @media (max-width: 600px) {
       height: 55px;
     }
   }
   &__aside {
-    margin-top: 58px;
+    top: 66px;
     left: 0;
     height: 100vh;
     float: left;
     width: 170px;
     position: fixed;
-    background-color: $color-white;
-    z-index: 75;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+    background-color: #EEEEEE;
+    z-index: 5;
+    box-shadow: inset -1px 0 0 #d7bb00;
+    overflow: hidden;
+    overflow-y: scroll;
     @media (max-width: 600px) {
       margin-top: 55px;
     }
   }
   &__body {
-    margin-top: 65px;
-    margin-left: 170px;
+    margin-top: 66px;
+    margin-left: 171px;
     padding-left: 15px;
-    width: 85%;
+    width: 87%;
     float: left;
-    z-index: 50;
+    z-index: 5;
     @media (max-width: 600px) {
       margin-top: 55px;
     }
