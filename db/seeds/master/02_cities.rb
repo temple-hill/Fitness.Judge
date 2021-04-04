@@ -1,3 +1,11 @@
+# DO NOT MODIFY THIS FILE, it was auto-generated.
+#
+# Date: 2021-03-22 14:15:53 +0900
+# Seeding City
+# Written with the command:
+#
+#   /Users/watanabe.ryouichi/Glomouth.Shikakara/vendor/bundle/ruby/2.6.0/bin/rake seed_generator:master
+#
 City.upsert_all([
   {"code"=>"01100", "prefecture_code"=>"01", "parent_city_code"=>nil, "name"=>"札幌市", "name_kana"=>nil, "city_type"=>"major", "ascii"=>"sapporoshi", "lat"=>"43.062638", "lon"=>"141.353921"},
   {"code"=>"01101", "prefecture_code"=>"01", "parent_city_code"=>"01100", "name"=>"札幌市中央区", "name_kana"=>"さっぽろしちゅうおうく", "city_type"=>"major_child", "ascii"=>"sapporoshi-chuoku", "lat"=>"43.055463", "lon"=>"141.340965"},
@@ -2312,3 +2320,4 @@ City.upsert_all([
   {"code"=>"47382", "prefecture_code"=>"47", "parent_city_code"=>"47380", "name"=>"八重山郡与那国町", "name_kana"=>"やえやまぐんよなぐにちょう", "city_type"=>"county_child", "ascii"=>"yaeyamagun-yonagunicho", "lat"=>"24.467973", "lon"=>"123.00446"},
   {"code"=>"48000", "prefecture_code"=>"48", "parent_city_code"=>nil, "name"=>"海外", "name_kana"=>nil, "city_type"=>"normal", "ascii"=>"foreign", "lat"=>nil, "lon"=>nil},
 ])
+# End auto-generated file.

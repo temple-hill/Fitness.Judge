@@ -1,2 +1,0 @@
-class PrefectureFederation < ApplicationRecord
-end

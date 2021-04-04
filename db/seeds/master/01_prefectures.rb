@@ -1,3 +1,11 @@
+# DO NOT MODIFY THIS FILE, it was auto-generated.
+#
+# Date: 2021-03-22 14:15:53 +0900
+# Seeding Prefecture
+# Written with the command:
+#
+#   /Users/watanabe.ryouichi/Glomouth.Shikakara/vendor/bundle/ruby/2.6.0/bin/rake seed_generator:master
+#
 Prefecture.upsert_all([
   {"code"=>"01", "name"=>"北海道", "name_kana"=>"ほっかいどう", "ascii"=>"hokkaido"},
   {"code"=>"02", "name"=>"青森県", "name_kana"=>"あおもりけん", "ascii"=>"aomori"},
@@ -48,3 +56,4 @@ Prefecture.upsert_all([
   {"code"=>"47", "name"=>"沖縄県", "name_kana"=>"おきなわけん", "ascii"=>"okinawa"},
   {"code"=>"48", "name"=>"海外", "name_kana"=>"かいがい", "ascii"=>"foreign"},
 ])
+# End auto-generated file.
