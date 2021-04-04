@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_061402) do
+ActiveRecord::Schema.define(version: 2021_04_04_095211) do
+
+  create_table "admins", charset: "utf8mb4", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "given_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "given_name_kana", null: false
+    t.string "account_name", null: false
+    t.string "password_digest", null: false
+    t.string "remember_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_name"], name: "index_admins_on_account_name", unique: true
+  end
 
   create_table "cities", primary_key: "code", id: { type: :string, limit: 5 }, charset: "utf8mb4", force: :cascade do |t|
     t.string "prefecture_code", limit: 2, null: false
@@ -29,6 +42,20 @@ ActiveRecord::Schema.define(version: 2021_04_04_061402) do
     t.string "name", null: false
     t.string "name_kana", null: false
     t.string "ascii", null: false
+  end
+
+  create_table "staffs", charset: "utf8mb4", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "given_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "given_name_kana", null: false
+    t.string "email", null: false
+    t.string "account_name", null: false
+    t.string "password_digest", null: false
+    t.string "remember_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email", "account_name"], name: "index_staffs_on_email_and_account_name"
   end
 
   add_foreign_key "cities", "cities", column: "parent_city_code", primary_key: "code"
