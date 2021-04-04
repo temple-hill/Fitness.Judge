@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_095211) do
+ActiveRecord::Schema.define(version: 2021_04_04_135916) do
 
   create_table "admins", charset: "utf8mb4", force: :cascade do |t|
     t.string "family_name", null: false
@@ -38,6 +38,24 @@ ActiveRecord::Schema.define(version: 2021_04_04_095211) do
     t.index ["prefecture_code"], name: "fk_rails_bd5ee70183"
   end
 
+  create_table "federations", charset: "utf8mb4", force: :cascade do |t|
+    t.string "formal_name", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "prefecture_federations", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "federation_id"
+    t.string "prefecture_code", limit: 2
+    t.string "formal_name"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["federation_id"], name: "index_prefecture_federations_on_federation_id"
+    t.index ["prefecture_code"], name: "fk_rails_6694da653d"
+  end
+
   create_table "prefectures", primary_key: "code", id: { type: :string, limit: 2 }, charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "name_kana", null: false
@@ -45,6 +63,8 @@ ActiveRecord::Schema.define(version: 2021_04_04_095211) do
   end
 
   create_table "staffs", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "federation_id", null: false
+    t.bigint "prefecture_federation_id"
     t.string "family_name", null: false
     t.string "given_name", null: false
     t.string "family_name_kana", null: false
@@ -56,8 +76,14 @@ ActiveRecord::Schema.define(version: 2021_04_04_095211) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email", "account_name"], name: "index_staffs_on_email_and_account_name"
+    t.index ["federation_id"], name: "index_staffs_on_federation_id"
+    t.index ["prefecture_federation_id"], name: "index_staffs_on_prefecture_federation_id"
   end
 
   add_foreign_key "cities", "cities", column: "parent_city_code", primary_key: "code"
   add_foreign_key "cities", "prefectures", column: "prefecture_code", primary_key: "code"
+  add_foreign_key "prefecture_federations", "federations"
+  add_foreign_key "prefecture_federations", "prefectures", column: "prefecture_code", primary_key: "code"
+  add_foreign_key "staffs", "federations"
+  add_foreign_key "staffs", "prefecture_federations"
 end
