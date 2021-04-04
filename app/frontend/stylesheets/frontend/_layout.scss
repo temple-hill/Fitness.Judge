@@ -11,18 +11,29 @@
     background-color: white;
     z-index: 5;
     border-bottom: 1px solid #d7bb00;
+
     @media (max-width: 600px) {
       height: 55px;
     }
   }
 
   &__body {
+    min-height: 100vh;
     display: flex;
+    position: absolute;
     margin-top: 66px;
-    width: 87%;
+    width: 100%;
     z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding-bottom: 20px;
+
     @media (max-width: 600px) {
       margin-top: 55px;
+      height: 100%;
     }
   }
 }

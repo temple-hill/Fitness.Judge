@@ -1,12 +1,11 @@
 .side-menu {
   z-index: 1;
-  top: 66px;
+  margin-top: 20px;
   height: 100%;
   width: 170px;
-  // border-left: 1px solid #d7bb00;
-  // border-right: 1px solid #d7bb00;
+
   @media (max-width: 600px) {
-    top: 55px;
+    display: none;
   }
 
   ul {
@@ -15,7 +14,7 @@
     list-style: none;
     padding: 0px;
     font-size: 14px;
-    background-color: #e3e4e1;
+    background-color: white;
 
     li {
       line-height: 35px;
