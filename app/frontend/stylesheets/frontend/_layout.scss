@@ -1,0 +1,28 @@
+.frontend-layout {
+  box-sizing: border-box;
+
+  &__header {
+    margin: auto;
+    height: 65px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: white;
+    z-index: 5;
+    border-bottom: 1px solid #d7bb00;
+    @media (max-width: 600px) {
+      height: 55px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    margin-top: 66px;
+    width: 87%;
+    z-index: 1;
+    @media (max-width: 600px) {
+      margin-top: 55px;
+    }
+  }
+}

@@ -7,11 +7,27 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag "frontend", media: "all" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="frontend-layout">
+      <header class="frontend-layout__header">
+        <%= render "layouts/frontend/header" %>
+      </header>
+
+
+      <div class="frontend-layout__body">
+        <div class="container">
+          <%= yield %>
+        </div>
+
+        <div class="side-menu">
+          <%= render "layouts/frontend/side_menu" %>
+        </div>
+      </div>
+    </div>
+
     <%= javascript_pack_tag "frontend" %>
   </body>
 </html>

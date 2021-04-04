@@ -1,0 +1,12 @@
+<nav class="menu">
+  <h2>menu</h2>
+  <ul>
+    <% 5.times do |i| %>
+    <li>
+      <%= link_to "##{i}" do %>
+        <i class="fab fa-twitter"></i>テスト<%= i %>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</nav>

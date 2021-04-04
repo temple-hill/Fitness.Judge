@@ -1,4 +1,4 @@
-.backend-layout{
+.backend-layout {
   box-sizing: border-box;
 
   &__header {
@@ -18,7 +18,7 @@
   &__aside {
     top: 66px;
     left: 0;
-    height: 100vh;
+    height: 100%;
     float: left;
     width: 170px;
     position: fixed;
@@ -28,7 +28,7 @@
     overflow: hidden;
     overflow-y: scroll;
     @media (max-width: 600px) {
-      margin-top: 55px;
+      top: 55px;
     }
   }
   &__body {

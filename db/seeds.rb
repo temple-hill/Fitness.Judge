@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+masters = Dir.glob(Rails.root.join('db/seeds/master/*.rb')).sort
+masters.each do |f|
+  p f
+  load(f)
+end
