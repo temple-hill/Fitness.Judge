@@ -1,7 +1,13 @@
-.container {
+.backend-container {
   width: 100%;
   max-width: 960px;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   margin-right: auto;
   margin-left: auto;
+  padding: 20px 30px;
+
+  h1 {
+    font-size: 30px;
+  }
 }
