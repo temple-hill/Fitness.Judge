@@ -1,13 +1,18 @@
-.container {
+.frontend-container {
   width: 100%;
   max-width: 800px;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-right: 50px;
   margin-bottom: auto;
   background-color: white;
-  padding: 0 20px;
+  padding: 20px 30px;
 
   @media (max-width: 600px) {
+    margin-top: 0;
     margin-right: 0;
+  }
+
+  h1 {
+    font-size: 30px;
   }
 }
