@@ -1,10 +1,13 @@
 class CreatePrefectures < ActiveRecord::Migration[6.1]
   def change
-    create_table :prefectures, id: false do |t|
-      t.primary_key :code, :string, limit: 2
+    create_table :prefectures do |t|
       t.string :name, null: false
-      t.string :name_kana, null: false
+      t.string :kana, null: false
       t.string :ascii, null: false
+
+      t.timestamps
     end
+
+    add_index :prefectures, :name
   end
 end
