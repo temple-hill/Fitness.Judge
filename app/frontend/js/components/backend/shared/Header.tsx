@@ -39,21 +39,21 @@ const Header: React.FC<Props> = ({
   );
 
   return (
-    <React.Fragment>
+    <div className="header">
       <div className="header__logo">FitnessJudge 管理画面</div>
 
-      <Dropdown.Toggle as={CustomToggle} id="dropdown-menu">
-        {adminName}
-      </Dropdown.Toggle>
-
       <Dropdown drop={'down'}>
+        <Dropdown.Toggle as={CustomToggle} id="dropdown-menu">
+          {adminName}
+        </Dropdown.Toggle>
+
         <Dropdown.Menu>
           <Link to="#" className="dropdown-item" onClick={(e) => handleLogout(e)}>
             ログアウト
           </Link>
         </Dropdown.Menu>
       </Dropdown>
-    </React.Fragment>
+    </div>
   );
 };
 

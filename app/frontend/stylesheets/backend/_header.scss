@@ -9,28 +9,7 @@
     height: auto;
   }
 
-  a {
-    margin-left: 80%;
-    text-decoration: none;
-    color: #000;
-
-    i {
-      font-size: 25px;
-
-      &:hover {
-        color: #777777;
-      }
-    }
-  }
-
-  @media (max-width: 600px) {
-    height: 55px;
-    &__switch-link {
-      font-size: 10px;
-      word-wrap: break-word;
-    }
-    &__logo {
-      width: 120px;
-    }
+  .dropdown {
+    margin-left: 70%;
   }
 }
