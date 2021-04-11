@@ -8,13 +8,12 @@ class CreateStaffs < ActiveRecord::Migration[6.1]
       t.string :family_name_kana, null: false
       t.string :given_name_kana, null: false
       t.string :email, null: false
-      t.string :account_name, null: false
       t.string :password_digest, null: false
       t.string :remember_digest
 
       t.timestamps
     end
 
-    add_index :staffs, %i[email account_name]
+    add_index :staffs, :email, unique: true
   end
 end

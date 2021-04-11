@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 2021_04_04_151629) do
     t.string "given_name", null: false
     t.string "family_name_kana", null: false
     t.string "given_name_kana", null: false
-    t.string "account_name", null: false
+    t.string "email", null: false
     t.string "password_digest", null: false
     t.string "remember_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["account_name"], name: "index_admins_on_account_name", unique: true
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "cities", charset: "utf8mb4", force: :cascade do |t|
@@ -76,12 +76,11 @@ ActiveRecord::Schema.define(version: 2021_04_04_151629) do
     t.string "family_name_kana", null: false
     t.string "given_name_kana", null: false
     t.string "email", null: false
-    t.string "account_name", null: false
     t.string "password_digest", null: false
     t.string "remember_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email", "account_name"], name: "index_staffs_on_email_and_account_name"
+    t.index ["email"], name: "index_staffs_on_email", unique: true
     t.index ["federation_id"], name: "index_staffs_on_federation_id"
     t.index ["prefecture_federation_id"], name: "index_staffs_on_prefecture_federation_id"
   end
