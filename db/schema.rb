@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(version: 2021_04_04_151629) do
   create_table "admins", charset: "utf8mb4", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "given_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "given_name_kana", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "remember_digest"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
@@ -73,8 +73,6 @@ ActiveRecord::Schema.define(version: 2021_04_04_151629) do
     t.bigint "prefecture_federation_id"
     t.string "family_name", null: false
     t.string "given_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "given_name_kana", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "remember_digest"

@@ -14,8 +14,22 @@ class Admin < ApplicationRecord
 
   attr_accessor :current_password
 
+  class << self
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+  end
+
   def name
     "#{family_name} #{given_name}"
+  end
+
+  def create_reset_digest
+    update_columns(reset_password_token: Admin.new_token, reset_password_sent_at: Time.zone.now)
+  end
+
+  def password_reset_expired?
+    reset_password_sent_at < 2.hours.ago
   end
 
   # def create_sorted_errors

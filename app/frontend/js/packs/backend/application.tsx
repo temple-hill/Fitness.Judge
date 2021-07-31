@@ -10,8 +10,8 @@ import '@fortawesome/fontawesome-free/js/regular';
 import ErrorBoundary from '../../components/shared/ErrorBoundary';
 import Base from '../../pages/lib/Base';
 import Authenticate from '../../pages/backend/Authenticate';
-import Login from '../../pages/backend/Login';
 import Index from '../../pages/backend/Index';
+import Login from '../../pages/backend/Login';
 import { getElementData } from '../../lib/utils/index';
 import { FlashMessageInterface } from '../../lib/interface/responses';
 
@@ -39,11 +39,15 @@ if (appElement) {
 if (loginElement) {
   const flashMessage = getElementData(loginElement) as FlashMessageInterface | undefined;
   ReactDOM.render(
-    <ErrorBoundary>
-      <Base flashMessage={flashMessage}>
-        <Login />
-      </Base>
-    </ErrorBoundary>,
+    <Router>
+      <ErrorBoundary>
+        <Base flashMessage={flashMessage}>
+          <Switch>
+            <Login />
+          </Switch>
+        </Base>
+      </ErrorBoundary>
+    </Router>,
     loginElement
   );
 }

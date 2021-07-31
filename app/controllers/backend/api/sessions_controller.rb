@@ -5,7 +5,6 @@ class Backend::Api::SessionsController < Backend::Api::ApplicationController
     admin = Admin.find_by(email: session_params[:email].downcase)
     if admin&.authenticate(session_params[:password])
       login(admin.id)
-      flash[:success] = 'ログインしました。'
       render json: {}, status: :ok
     else
       render json: { errors: ['メールアドレスまたはパスワードが間違っています。'] }
@@ -19,6 +18,7 @@ class Backend::Api::SessionsController < Backend::Api::ApplicationController
   end
 
   private
+
   def session_params
     params.require(:session).permit(:email, :password)
   end

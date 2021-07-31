@@ -16,3 +16,9 @@ export const login = (session: Session): Promise<AxiosResponse<any>> => {
 export const logout = (): Promise<AxiosResponse<any>> => {
   return axios().delete(buildBackendApiUrl('logout'));
 };
+
+export const sendPasswordReset = (email: string): Promise<AxiosResponse<any>> => {
+  return axios().post(buildBackendApiUrl('password_resets/create'), {
+    email: email,
+  });
+};

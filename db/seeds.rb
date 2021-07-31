@@ -12,11 +12,11 @@ masters.each do |f|
   load(f)
 end
 
-Admin.create!(
+admin = Admin.new(
   family_name: '寺岡',
   given_name: 'テスト',
-  family_name_kana: 'てらおか',
-  given_name_kana: 'てすと',
   email: 'temple.hill@icloud.com',
   password: 'password'
 )
+
+admin.save!(validate: false)
