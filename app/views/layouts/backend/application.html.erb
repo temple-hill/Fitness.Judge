@@ -6,27 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <%= stylesheet_pack_tag "backend", media: "all" %>
   </head>
 
   <body>
-    <div class="backend-layout">
-      <header class="backend-layout__header">
-        <%= render "layouts/backend/header" %>
-      </header>
-
-      <aside class="backend-layout__aside">
-        <%= render "layouts/backend/side_menu" %>
-      </aside>
-
-      <div class="backend-layout__body">
-        <div class="backend-container">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
-
+    <%= yield %>
     <%= javascript_pack_tag "backend" %>
   </body>
 </html>

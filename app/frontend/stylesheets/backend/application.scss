@@ -1,5 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "../shared/color";
+@import "../shared/button";
+@import "../shared/errors";
+@import "../shared/flash_message";
 @import "./layout";
 @import "./header";
 @import "./side_menu";

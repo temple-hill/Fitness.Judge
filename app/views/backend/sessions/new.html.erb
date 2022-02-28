@@ -1,0 +1,23 @@
+<div class="backend-login-layout">
+  <div class="backend-login-layout__body">
+    <% flash.each do |key, value| %>
+      <div class="alert-<%= key %> alert-message <%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
+    <%= form_with model: @admin, url: backend_login_path, local: true  do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
+    <% end %>
+
+    <div>
+      <%= link_to "パスワードを忘れた場合", backend_new_password_resets_path %>
+    </div>
+  </div>
+</div>

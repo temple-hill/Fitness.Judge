@@ -1,3 +1,27 @@
+.backend-login-layout {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  &__body {
+    width: 400px;
+  }
+}
+
+.backend-password-reset-layout {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  &__body {
+    width: 400px;
+  }
+}
+
 .backend-layout {
   box-sizing: border-box;
 
@@ -9,14 +33,14 @@
     left: 0;
     position: fixed;
     background-color: #EEEEEE;
-    z-index: 5;
+    z-index: 10;
     border-bottom: 1px solid #d7bb00;
     @media (max-width: 600px) {
       height: 55px;
     }
   }
   &__aside {
-    top: 66px;
+    top: 65px;
     left: 0;
     height: 100%;
     float: left;

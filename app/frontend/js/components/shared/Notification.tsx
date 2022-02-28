@@ -6,7 +6,7 @@ import Nl2br from '../../components/shared/Nl2br';
 interface Props {
   info?: string;
   errors?: string[];
-  clear?: Function;
+  clear?: () => void;
 }
 
 const Notification: React.FC<Props> = ({ info, errors, clear }) => {

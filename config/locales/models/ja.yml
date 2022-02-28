@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      admin: 管理者
+
+    attributes:
+      base: &base
+        id: ID
+        created_at: 作成日時
+        updated_at: 最終更新日時
+
+      admin:
+        <<: *base
+        name: 氏名
+        family_name: 姓
+        given_name: 名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認

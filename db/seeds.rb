@@ -11,3 +11,12 @@ masters.each do |f|
   p f
   load(f)
 end
+
+admin = Admin.new(
+  family_name: '寺岡',
+  given_name: 'テスト',
+  email: 'temple.hill@icloud.com',
+  password: 'password'
+)
+
+admin.save!(validate: false)
